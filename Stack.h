@@ -1,6 +1,6 @@
 #include <algorithm>
-#ifndef _STACK
-#define _STACK
+#ifndef STACK
+#define STACK
 #define DEFAULT_SIZE 5
 
 template <class T>
