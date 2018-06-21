@@ -12,7 +12,7 @@ public:
 	Stack& operator=(const Stack<T> &obj);
 	~Stack();
 	T pop();
-    void swap(Stack<T> &first, Stack<T> &second);
+        void swap(Stack<T> &first, Stack<T> &second);
 	void push(const int& num);
 	void resize(const int& size);
 	void print();
