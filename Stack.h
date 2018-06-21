@@ -12,7 +12,7 @@ public:
 	Stack& operator=(const Stack<T> &obj);
 	~Stack();
 	T pop();
-    void swap(Stack<T> &first, Stack<T> &second);
+    	void swap(Stack<T> &first, Stack<T> &second);
 	void push(const int& num);
 	void resize(const int& size);
 	void print();
@@ -33,13 +33,13 @@ Stack<T>::Stack(const Stack<T> &obj):  // copy constructor
     buffer(new T[obj.actualSize]),
     actualSize(obj.actualSize),
     maxSize(obj.maxSize) {
-	std::copy(obj.buffer, obj.buffer + obj.actualSize, buffer);
+    std::copy(obj.buffer, obj.buffer + obj.actualSize, buffer);
 }      
 
 template <class T>
 Stack<T>&  Stack<T>::operator=(const Stack<T> &obj) {  // copy assignment
     swap(*this, obj);
-	return *this;
+    return *this;
 }
 
 template <class T>
