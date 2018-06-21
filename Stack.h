@@ -13,7 +13,7 @@ public:
 	~Stack();
 	T pop();
     	void swap(Stack<T> &first, Stack<T> &second);
-	void push(const int& num);
+	void push(const T& num);
 	void resize(const int& size);
 	void print();
 
@@ -50,7 +50,7 @@ void Stack<T>::swap(Stack<T> &first, Stack<T> &second) {  // copynswap idiom
 }
 
 template <class T>
-void Stack<T>::push(const int& num) {  // push number into stack
+void Stack<T>::push(const T& num) {  // push number into stack
 	if (actualSize >= maxSize) {
 		maxSize += 5;
 		resize(maxSize);
