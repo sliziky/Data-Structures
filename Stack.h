@@ -1,6 +1,6 @@
 #include <algorithm>
-#ifndef STACK
-#define STACK
+#ifndef _STACK
+#define _STACK
 #define DEFAULT_SIZE 5
 
 template <class T>
@@ -12,6 +12,7 @@ public:
 	Stack& operator=(const Stack<T> &obj);
 	~Stack();
 	T pop();
+    void swap(Stack<T> &first, Stack<T> &second);
 	void push(const int& num);
 	void resize(const int& size);
 	void print();
@@ -33,13 +34,15 @@ Stack<T>::Stack(const Stack<T> &obj) {
 
 template <class T>
 Stack<T>&  Stack<T>::operator=(const Stack<T> &obj) {
-	T * temp = new T[obj.actualSize];
-	std::copy(obj.buffer, obj.buffer + obj.actualSize, temp);
-	this->actualSize = obj.actualSize;
-	this->maxSize = obj.maxSize;
-	delete[] buffer;
-	buffer = temp;
+    swap(*this, obj);
 	return *this;
+}
+
+template <class T>
+void Stack<T>::swap(Stack<T> &first, Stack<T> &second) {
+    std::swap(first.buffer,second.buffer);
+    std::swap(first.actualSize, second.actualSize);
+    std::swap(first.maxSize, second.maxSize);
 }
 
 template <class T>
